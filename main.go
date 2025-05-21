@@ -1,4 +1,4 @@
-package fromfile
+package main
 
 import (
 	"fmt"
@@ -9,9 +9,13 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+func main() {
+	os.Exit(int(realMain()))
+}
+
 type exitCode int
 
-func Main() exitCode {
+func realMain() exitCode {
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "Usage: gh-from-file <file> <gh commands>")
 		return 1
