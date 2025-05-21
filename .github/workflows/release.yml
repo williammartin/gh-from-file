@@ -15,5 +15,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cli/gh-extension-precompile@v2
         with:
+          build_script_override: ./script/build.sh
           generate_attestations: true
           go_version_file: go.mod
